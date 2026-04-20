@@ -1,6 +1,5 @@
 package com.taller.proyectofinalcomponentes.navigation
 
-
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -9,10 +8,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.proyectofinal.ui.screens.CartScreen
 import com.example.proyectofinal.ui.screens.CheckoutScreen
-import com.example.proyectofinal.ui.screens.HomeScreen
-import com.example.proyectofinal.ui.screens.LoginScreen
-import com.example.proyectofinal.ui.screens.ProductDetailScreen
-import com.example.proyectofinal.ui.screens.ProductListScreen
+
+import com.taller.proyectofinalcomponentes.ui.screens.LoginScreen
+import com.taller.proyectofinalcomponentes.ui.screens.HomeScreen
+import com.taller.proyectofinalcomponentes.ui.screens.ProductDetailScreen
+import com.taller.proyectofinalcomponentes.ui.screens.ProductListScreen
 
 @Composable
 fun AppNavHost() {
@@ -22,6 +22,8 @@ fun AppNavHost() {
         navController = navController,
         startDestination = AppRoutes.Login.route
     ) {
+
+        // 🔹 LOGIN
         composable(AppRoutes.Login.route) {
             LoginScreen(
                 onLoginSuccess = {
@@ -32,6 +34,7 @@ fun AppNavHost() {
             )
         }
 
+        // 🔹 HOME
         composable(AppRoutes.Home.route) {
             HomeScreen(
                 onCategoryClick = { category ->
@@ -46,6 +49,7 @@ fun AppNavHost() {
             )
         }
 
+        // 🔹 PRODUCT LIST
         composable(
             route = AppRoutes.ProductList.route,
             arguments = listOf(navArgument("category") { type = NavType.StringType })
@@ -64,6 +68,7 @@ fun AppNavHost() {
             )
         }
 
+        // 🔹 PRODUCT DETAIL
         composable(
             route = AppRoutes.ProductDetail.route,
             arguments = listOf(navArgument("productId") { type = NavType.IntType })
@@ -79,6 +84,7 @@ fun AppNavHost() {
             )
         }
 
+        // 🔹 CART
         composable(AppRoutes.Cart.route) {
             CartScreen(
                 onBack = { navController.popBackStack() },
@@ -88,6 +94,7 @@ fun AppNavHost() {
             )
         }
 
+        // 🔹 CHECKOUT
         composable(AppRoutes.Checkout.route) {
             CheckoutScreen(
                 onBack = { navController.popBackStack() },
@@ -99,9 +106,4 @@ fun AppNavHost() {
             )
         }
     }
-}
-
-@Composable
-fun LoginScreen(onLoginSuccess: () -> Unit) {
-    TODO("Not yet implemented")
 }

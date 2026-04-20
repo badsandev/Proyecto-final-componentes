@@ -1,6 +1,8 @@
 package com.taller.proyectofinalcomponentes.ui.screens
 
-package com.example.proyectofinal.ui.screens
+import com.taller.proyectofinalcomponentes.data.Category
+import com.taller.proyectofinalcomponentes.data.Product
+
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -45,8 +47,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.proyectofinal.data.model.Category
-import com.example.proyectofinal.data.model.Product
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
