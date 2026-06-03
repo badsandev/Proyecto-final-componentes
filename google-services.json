@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "374798934542",
+    "project_id": "tienda-android-91419",
+    "storage_bucket": "tienda-android-91419.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374798934542:android:347f10984d620be215525f",
+        "android_client_info": {
+          "package_name": "com.taller.proyectofinalcomponentes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374798934542-0lh1qrgtlp12d4vb87r8lltrlvarhheo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taller.proyectofinalcomponentes",
+            "certificate_hash": "c0ecf72862eaccdac49bc88a0e0862c0a04e6801"
+          }
+        },
+        {
+          "client_id": "374798934542-kavuo8pjapph2k39ulcjm49rhtii92le.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrPK4E6cujpN2pLJqB_Leb6rhpmv48ZhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374798934542-kavuo8pjapph2k39ulcjm49rhtii92le.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

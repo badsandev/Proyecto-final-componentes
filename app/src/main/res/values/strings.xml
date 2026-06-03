@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Proyecto final componentes</string>
+    <string name="app_name">ShopWave</string>
+    <string name="app_slogan">Your neighborhood store, now digital</string>
+    <string name="loading">Loading…</string>
+
+    <!-- Corregidos con formato posicional -->
+    <string name="order_items_total">%1$d items · $%2$s</string>
+    <string name="admin_inventory_alert_desc">%1$d out of stock · %2$d with low stock</string>
+
+    <string name="home_welcome">Hello, %1$s</string>
+    <string name="product_low_stock">Only %1$d left</string>
+    <string name="product_stock">Stock: %1$d</string>
+    <string name="products_count">%1$d products</string>
+    <string name="admin_orders_delivered">%1$d orders delivered</string>
+    <string name="admin_current_stock">Current stock: %1$d</string>
+
+    <string name="admin_delete_confirm">Delete \"%1$s\"? This action cannot be undone.</string>
+    <string name="default_web_client_id">your-client-id.apps.googleusercontent.com</string>
 </resources>

@@ -1,0 +1,190 @@
+﻿<resources>
+    <string name="app_name">ShopWave</string>
+    <string name="default_web_client_id">374798934542-kavuo8pjapph2k39ulcjm49rhtii92le.apps.googleusercontent.com</string>
+
+    <!-- General -->
+    <string name="app_slogan">Tu tienda de barrio, ahora digital</string>
+    <string name="loading">Cargando…</string>
+    <string name="error_generic">Algo salió mal. Inténtalo de nuevo.</string>
+    <string name="no_internet">Sin conexión a internet</string>
+    <string name="retry">Reintentar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Guardar</string>
+    <string name="delete">Eliminar</string>
+    <string name="edit">Editar</string>
+    <string name="close">Cerrar</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+
+    <!-- Auth -->
+    <string name="login_title">Iniciar sesión</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="login_google">Continuar con Google</string>
+    <string name="login_no_account">¿No tienes cuenta? Regístrate</string>
+    <string name="register_title">Crear cuenta</string>
+    <string name="register_button">Crear cuenta</string>
+    <string name="register_have_account">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="logout_confirm">¿Seguro que quieres cerrar sesión?</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="forgot_password_title">Recuperar contraseña</string>
+    <string name="forgot_password_sent">Te enviamos un correo para restablecer tu contraseña</string>
+    <string name="field_name">Nombre completo</string>
+    <string name="field_email">Correo electrónico</string>
+    <string name="field_password">Contraseña</string>
+    <string name="field_confirm_password">Confirmar contraseña</string>
+    <string name="error_empty_fields">Por favor completa todos los campos</string>
+    <string name="error_invalid_email">Formato de correo inválido</string>
+    <string name="error_short_password">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="error_passwords_mismatch">Las contraseñas no coinciden</string>
+    <string name="error_invalid_credentials">Credenciales inválidas</string>
+    <string name="error_email_in_use">Ya existe una cuenta con este correo</string>
+
+    <!-- Home -->
+    <string name="home_welcome">Hola, %1$s</string>
+    <string name="home_search_hint">Buscar productos…</string>
+    <string name="home_categories">Categorías</string>
+    <string name="home_featured">Productos destacados</string>
+    <string name="home_see_all">Ver todo</string>
+    <string name="home_my_orders">Mis órdenes</string>
+    <string name="home_flash_sale">Oferta relámpago</string>
+    <string name="home_flash_sale_desc">Hasta 40% de descuento en artículos seleccionados</string>
+
+    <!-- Categories -->
+    <string name="cat_electronics">Electrónica</string>
+    <string name="cat_fashion">Moda</string>
+    <string name="cat_home">Hogar</string>
+    <string name="cat_beauty">Belleza</string>
+    <string name="cat_sports">Deportes</string>
+    <string name="cat_food">Alimentos</string>
+
+    <!-- Products -->
+    <string name="product_add_cart">Agregar al carrito</string>
+    <string name="product_added">✓ ¡Agregado!</string>
+    <string name="product_out_of_stock">Sin stock</string>
+    <string name="product_low_stock">Solo quedan %1$d</string>
+    <string name="product_stock">Stock: %1$d</string>
+    <string name="product_description">Descripción</string>
+    <string name="product_rating">Calificación</string>
+    <string name="product_quantity">Cantidad</string>
+    <string name="product_total">Total: $%1$s</string>
+    <string name="product_save_favorite">Favorito</string>
+    <string name="product_saved">Guardado</string>
+    <string name="product_detail_title">Detalle del producto</string>
+    <string name="products_count">%1$d productos</string>
+    <string name="products_no_results">Sin resultados para \"%1$s\"</string>
+    <string name="products_empty_category">No hay productos en esta categoría</string>
+    <string name="sort_price_asc">Precio: menor a mayor</string>
+    <string name="sort_price_desc">Precio: mayor a menor</string>
+    <string name="sort_rating">Mejor calificados</string>
+
+    <!-- Cart -->
+    <string name="cart_title">Mi carrito</string>
+    <string name="cart_empty">Tu carrito está vacío</string>
+    <string name="cart_keep_shopping">Seguir comprando</string>
+    <string name="cart_subtotal">Subtotal</string>
+    <string name="cart_shipping">Envío</string>
+    <string name="cart_total">Total</string>
+    <string name="cart_checkout">Proceder al pago</string>
+    <string name="cart_clear">Vaciar</string>
+
+    <!-- Checkout -->
+    <string name="checkout_title">Finalizar compra</string>
+    <string name="checkout_address">Dirección de entrega</string>
+    <string name="checkout_address_hint">Ej: Cra 5 #10-20, Bogotá</string>
+    <string name="checkout_payment">Método de pago</string>
+    <string name="checkout_summary">Resumen del pedido</string>
+    <string name="checkout_confirm">Confirmar orden</string>
+    <string name="checkout_error_address">Por favor ingresa una dirección de entrega</string>
+    <string name="checkout_error_payment">Por favor selecciona un método de pago</string>
+    <string name="pay_card">Tarjeta crédito / débito</string>
+    <string name="pay_googlepay">Google Pay</string>
+    <string name="pay_paypal">PayPal</string>
+    <string name="pay_cash">Efectivo</string>
+
+    <!-- Orders -->
+    <string name="orders_title">Mis órdenes</string>
+    <string name="orders_empty">Aún no tienes órdenes</string>
+    <string name="order_id">Orden #%1$s</string>
+    <string name="order_items_total">%1$d artículos · $%2$s</string>
+    <string name="order_address">%1$s</string>
+    <string name="order_payment">%1$s</string>
+    <string name="status_pending">Pendiente</string>
+    <string name="status_confirmed">Confirmado</string>
+    <string name="status_preparing">Preparando</string>
+    <string name="status_shipped">Enviado</string>
+    <string name="status_delivered">Entregado</string>
+    <string name="status_cancelled">Cancelado</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Mi perfil</string>
+    <string name="profile_role_admin">Administrador</string>
+    <string name="profile_role_user">Usuario</string>
+    <string name="profile_orders">Mis órdenes</string>
+    <string name="profile_notifications">Notificaciones</string>
+    <string name="profile_help">Ayuda y soporte</string>
+
+    <!-- Favorites -->
+    <string name="favorites_title">Mis favoritos</string>
+    <string name="favorites_empty">Sin favoritos aún</string>
+    <string name="favorites_empty_desc">Guarda los productos que te interesen</string>
+
+    <!-- Notifications -->
+    <string name="notifications_title">Notificaciones</string>
+    <string name="notifications_empty">Sin notificaciones</string>
+    <string name="notifications_empty_desc">Tus alertas y actualizaciones aparecerán aquí</string>
+    <string name="notifications_mark_all">Marcar todo como leído</string>
+    <string name="notification_new">Nuevo</string>
+    <string name="notification_earlier">Antes</string>
+    <string name="notification_read">Leído</string>
+    <string name="notif_order_confirmed_title">¡Orden confirmada!</string>
+    <string name="notif_order_confirmed_body">Tu pedido fue recibido y está en proceso.</string>
+    <string name="notif_order_shipped_title">¡Tu orden va en camino!</string>
+    <string name="notif_order_shipped_body">Tu pedido ha sido enviado.</string>
+    <string name="notif_order_delivered_title">Orden entregada</string>
+    <string name="notif_order_delivered_body">Tu pedido fue entregado exitosamente.</string>
+    <string name="notif_promo_title">¡Oferta especial!</string>
+    <string name="notif_promo_body">Tienes 20%% de descuento en electrónica hoy.</string>
+
+    <!-- Admin -->
+    <string name="admin_title">Panel de administrador</string>
+    <string name="admin_tab_summary">Resumen</string>
+    <string name="admin_tab_orders">Órdenes</string>
+    <string name="admin_tab_products">Productos</string>
+    <string name="admin_revenue">Ingresos totales</string>
+    <string name="admin_orders_delivered">%1$d órdenes entregadas</string>
+    <string name="admin_pending">Pendientes</string>
+    <string name="admin_delivered">Entregadas</string>
+    <string name="admin_low_stock">Stock bajo</string>
+    <string name="admin_no_stock">Sin stock</string>
+    <string name="admin_add_product">Agregar producto</string>
+    <string name="admin_edit_product">Editar producto</string>
+    <string name="admin_new_product">Nuevo producto</string>
+    <string name="admin_delete_product">Eliminar producto</string>
+    <string name="admin_delete_confirm">¿Eliminar \"%1$s\"? Esta acción no se puede deshacer.</string>
+    <string name="admin_update_stock">Actualizar stock</string>
+    <string name="admin_current_stock">Stock actual: %1$d</string>
+    <string name="admin_inventory_alert">Alerta de inventario</string>
+    <string name="admin_inventory_alert_desc">%1$d sin stock · %2$d con stock bajo</string>
+    <string name="admin_manage_status">Gestionar estado</string>
+    <string name="admin_see_detail">Ver detalle</string>
+    <string name="admin_hide">Ocultar</string>
+    <string name="field_product_name">Nombre del producto *</string>
+    <string name="field_category">Categoría *</string>
+    <string name="field_price">Precio *</string>
+    <string name="field_old_price">Precio anterior</string>
+    <string name="field_stock">Stock disponible *</string>
+    <string name="field_description">Descripción</string>
+    <string name="product_added_ok">✓ Producto agregado correctamente</string>
+    <string name="product_updated_ok">✓ Producto actualizado</string>
+    <string name="product_deleted_ok">Producto eliminado</string>
+    <string name="stock_updated_ok">✓ Stock actualizado</string>
+
+    <!-- FCM -->
+    <string name="notif_channel_orders_id">shopwave_orders</string>
+    <string name="notif_channel_orders_name">Órdenes</string>
+    <string name="notif_channel_orders_desc">Actualizaciones de estado de tus pedidos</string>
+    <string name="notif_channel_promos_id">shopwave_promos</string>
+    <string name="notif_channel_promos_name">Promociones</string>
+    <string name="notif_channel_promos_desc">Descuentos y ofertas especiales</string>
+</resources>
