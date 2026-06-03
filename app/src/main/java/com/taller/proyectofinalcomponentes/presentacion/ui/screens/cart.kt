@@ -1,6 +1,5 @@
 package com.taller.proyectofinalcomponentes.presentacion.ui.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -108,9 +107,13 @@ fun CartScreen(
 private fun TarjetaItemCarrito(item: ItemCarrito, onAumentar: () -> Unit, onDisminuir: () -> Unit, onEliminar: () -> Unit) {
     Card(Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp)) {
         Row(Modifier.padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.size(60.dp).background(Color.LightGray, RoundedCornerShape(8.dp)), contentAlignment = Alignment.Center) {
-                Text(item.categoria.take(1).uppercase())
-            }
+            ImagenProducto(
+                imageUrl     = item.imageUrl,
+                nombre       = item.nombre,
+                categoria    = item.categoria,
+                size         = 60.dp,
+                cornerRadius = 8.dp
+            )
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
                 Text(item.nombre, fontWeight = FontWeight.Bold)

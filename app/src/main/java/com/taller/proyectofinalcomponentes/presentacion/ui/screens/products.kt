@@ -37,13 +37,15 @@ fun ProductListScreen(
     var orden          by remember { mutableStateOf("precio_asc") }
     var menuAbierto    by remember { mutableStateOf(false) }
 
-    LaunchedEffect(category) {
+   /* LaunchedEffect(category) {
         productoVM.cargarPorCategoria(category)
-    }
+    }*/
 
-    val productosFiltrados = remember(todosProductos, busqueda, orden) {
-        var lista = if (busqueda.isBlank()) todosProductos
-        else todosProductos.filter { it.name.contains(busqueda, ignoreCase = true) }
+    val productosFiltrados = remember(todosProductos, busqueda, orden, category) {
+        var lista = todosProductos.filter {
+            (category == "Todos" || it.category == category) &&
+                    (busqueda.isBlank() || it.name.contains(busqueda, ignoreCase = true))
+        }
         lista = when (orden) {
             "precio_asc"  -> lista.sortedBy { it.price }
             "precio_desc" -> lista.sortedByDescending { it.price }

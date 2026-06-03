@@ -29,10 +29,8 @@ fun OrdenesScreen(
     usuarioId: String,
     onBack: () -> Unit
 ) {
-    val todasLasOrdenes by ordenVM.ordenes.collectAsState()
+    val misOrdenes by ordenVM.ordenesUsuario.collectAsState()
     val cargando by ordenVM.cargando.collectAsState()
-
-    val misOrdenes = todasLasOrdenes 
 
     LaunchedEffect(usuarioId) {
         if (usuarioId.isNotEmpty()) {
@@ -58,22 +56,38 @@ fun OrdenesScreen(
     ) { padding ->
         when {
             cargando -> {
-                Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.Center) {
+                Box(
+                    Modifier
+                        .fillMaxSize()
+                        .padding(padding),
+                    contentAlignment = Alignment.Center
+                ) {
                     CircularProgressIndicator(color = Color(0xFF2563EB))
                 }
             }
+
             misOrdenes.isEmpty() -> {
-                EstadoVacioOrdenes(Modifier.fillMaxSize().padding(padding))
+                EstadoVacioOrdenes(
+                    Modifier
+                        .fillMaxSize()
+                        .padding(padding)
+                )
             }
+
             else -> {
                 LazyColumn(
-                    modifier = Modifier.fillMaxSize().padding(padding).padding(horizontal = 16.dp),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(padding)
+                        .padding(horizontal = 16.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     item { Spacer(modifier = Modifier.height(8.dp)) }
+
                     items(misOrdenes, key = { it.id }) { orden ->
                         TarjetaOrdenUsuario(orden = orden)
                     }
+
                     item { Spacer(modifier = Modifier.height(16.dp)) }
                 }
             }
@@ -109,6 +123,7 @@ private fun TarjetaOrdenUsuario(orden: Orden) {
                         color = Color.Gray
                     )
                 }
+
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     ChipEstado(estado = orden.estado)
                     IconButton(onClick = { expandido = !expandido }) {
@@ -125,10 +140,19 @@ private fun TarjetaOrdenUsuario(orden: Orden) {
 
             if (expandido) {
                 HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
+
                 orden.items.forEach { item ->
-                    Row(Modifier.fillMaxWidth().padding(vertical = 2.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 2.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
                         Text("• ${item.nombre} x${item.cantidad}", style = MaterialTheme.typography.bodySmall)
-                        Text("\$${String.format(Locale.US, "%.2f", item.precio * item.cantidad)}", style = MaterialTheme.typography.bodySmall)
+                        Text(
+                            "\$${String.format(Locale.US, "%.2f", item.precio * item.cantidad)}",
+                            style = MaterialTheme.typography.bodySmall
+                        )
                     }
                 }
 
@@ -148,8 +172,13 @@ private fun TarjetaOrdenUsuario(orden: Orden) {
 @Composable
 private fun FilaCosto(label: String, valor: Double, esTotal: Boolean = false) {
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        Text(label, style = MaterialTheme.typography.bodySmall, fontWeight = if (esTotal) FontWeight.Bold else FontWeight.Normal)
-        Text("\$${String.format(Locale.US, "%.2f", valor)}",
+        Text(
+            label,
+            style = MaterialTheme.typography.bodySmall,
+            fontWeight = if (esTotal) FontWeight.Bold else FontWeight.Normal
+        )
+        Text(
+            "\$${String.format(Locale.US, "%.2f", valor)}",
             style = MaterialTheme.typography.bodySmall,
             fontWeight = if (esTotal) FontWeight.Bold else FontWeight.Normal,
             color = if (esTotal) Color(0xFF2563EB) else Color.Unspecified
@@ -159,18 +188,30 @@ private fun FilaCosto(label: String, valor: Double, esTotal: Boolean = false) {
 
 @Composable
 private fun TimelineEstado(estadoActual: EstadoOrden) {
-    val pasos = listOf(EstadoOrden.PENDIENTE, EstadoOrden.CONFIRMADO, EstadoOrden.PREPARANDO, EstadoOrden.ENVIADO, EstadoOrden.ENTREGADO)
+    val pasos = listOf(
+        EstadoOrden.PENDIENTE,
+        EstadoOrden.CONFIRMADO,
+        EstadoOrden.PREPARANDO,
+        EstadoOrden.ENVIADO,
+        EstadoOrden.ENTREGADO
+    )
 
     if (estadoActual == EstadoOrden.CANCELADO) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Icon(Icons.Default.Close, null, tint = Color.Red, modifier = Modifier.size(20.dp))
             Spacer(Modifier.width(8.dp))
-            Text("Orden cancelada", color = Color.Red, style = MaterialTheme.typography.bodySmall, fontWeight = FontWeight.Bold)
+            Text(
+                "Orden cancelada",
+                color = Color.Red,
+                style = MaterialTheme.typography.bodySmall,
+                fontWeight = FontWeight.Bold
+            )
         }
         return
     }
 
     val indiceActual = pasos.indexOf(estadoActual)
+
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
@@ -211,7 +252,12 @@ private fun TimelineEstado(estadoActual: EstadoOrden) {
 private fun EstadoVacioOrdenes(modifier: Modifier = Modifier) {
     Box(modifier, contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Icon(Icons.Default.ShoppingCart, null, modifier = Modifier.size(64.dp), tint = Color.LightGray)
+            Icon(
+                Icons.Default.ShoppingCart,
+                null,
+                modifier = Modifier.size(64.dp),
+                tint = Color.LightGray
+            )
             Spacer(Modifier.height(16.dp))
             Text("No tienes órdenes todavía", color = Color.Gray)
         }

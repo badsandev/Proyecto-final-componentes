@@ -31,7 +31,6 @@ class ProductoViewModel : ViewModel() {
             initialValue  = emptyList()
         )
 
-    // ─── Ya no necesita cargarProductos() manual — el Flow es automático ──
     fun cargarProductos() { /* no-op, Flow ya está activo */ }
 
     fun cargarPorCategoria(categoria: String): Flow<List<Product>> =

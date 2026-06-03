@@ -20,7 +20,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.taller.proyectofinalcomponentes.core.utils.ImageUtils
 import com.taller.proyectofinalcomponentes.dominio.model.EstadoOrden
 import com.taller.proyectofinalcomponentes.dominio.model.Orden
@@ -36,11 +35,12 @@ import java.util.Locale
 fun AdminPanelScreen(
     ordenViewModel: OrdenViewModel,
     authViewModel: AuthViewModel,
+    productoViewModel: ProductoViewModel,
     onCerrarSesion: () -> Unit
 ) {
-    val productoVM: ProductoViewModel = viewModel()
+    val productoVM = productoViewModel
 
-    val ordenes      by ordenViewModel.ordenes.collectAsState()
+    val ordenes by ordenViewModel.ordenesAdmin.collectAsState()
     val cargandoOrd  by ordenViewModel.cargando.collectAsState()
     val productos    by productoVM.productos.collectAsState()
     val cargandoProd by productoVM.cargando.collectAsState()

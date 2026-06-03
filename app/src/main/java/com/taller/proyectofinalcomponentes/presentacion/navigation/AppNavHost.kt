@@ -104,8 +104,9 @@ fun AppNavHost() {
         // ── Admin Panel ───────────────────────────────────────────────────
         composable(AppRoutes.AdminPanel.route) {
             AdminPanelScreen(
-                ordenViewModel = ordenVM,
-                authViewModel  = authVM,
+                ordenViewModel  = ordenVM,
+                authViewModel   = authVM,
+                productoViewModel = productoVM,
                 onCerrarSesion = {
                     authVM.cerrarSesion()
                     navController.navigate(AppRoutes.Login.route) {

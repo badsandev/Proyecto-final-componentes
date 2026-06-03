@@ -38,7 +38,7 @@ fun HomeScreen(
     onNotificacionesClick: () -> Unit,
     onPerfilClick: () -> Unit,
     onOrdenesClick: () -> Unit,
-    onFavoritosClick: () -> Unit       // ← nuevo
+    onFavoritosClick: () -> Unit
 ) {
     val productos   by productoVM.productos.collectAsState()
     val cargando    by productoVM.cargando.collectAsState()
@@ -69,15 +69,12 @@ fun HomeScreen(
                     }
                 },
                 actions = {
-                    // Favoritos
                     IconButton(onClick = onFavoritosClick) {
                         Icon(Icons.Default.Favorite, contentDescription = "Favoritos")
                     }
-                    // Notificaciones
                     IconButton(onClick = onNotificacionesClick) {
                         Icon(Icons.Default.Notifications, contentDescription = "Notificaciones")
                     }
-                    // Carrito con badge
                     BadgedBox(badge = {
                         if (cantCarrito > 0) Badge { Text("$cantCarrito") }
                     }) {
@@ -232,17 +229,13 @@ private fun TarjetaProductoHome(
         elevation = CardDefaults.cardElevation(2.dp)
     ) {
         Row(modifier = Modifier.padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
-            Box(
-                modifier         = Modifier.size(68.dp).background(Color(0xFFE2E8F0), RoundedCornerShape(12.dp)),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    product.category.take(2),
-                    style      = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold,
-                    color      = Color(0xFF94A3B8)
-                )
-            }
+            ImagenProducto(
+                imageUrl     = product.imageUrl,
+                nombre       = product.name,
+                categoria    = product.category,
+                size         = 68.dp,
+                cornerRadius = 12.dp
+            )
             Spacer(Modifier.width(14.dp))
             Column(Modifier.weight(1f)) {
                 Text(product.name, fontWeight = FontWeight.SemiBold, maxLines = 1)

@@ -13,14 +13,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import coil.compose.SubcomposeAsyncImage
-import coil.request.CachePolicy
-import coil.request.ImageRequest
-import com.taller.proyectofinalcomponentes.core.utils.ImageUtils
 import com.taller.proyectofinalcomponentes.dominio.model.ItemCarrito
 import com.taller.proyectofinalcomponentes.presentacion.viewmodel.CarritoViewModel
 import com.taller.proyectofinalcomponentes.presentacion.viewmodel.FavoritosViewModel
@@ -38,7 +32,6 @@ fun ProductDetailScreen(
 ) {
     val productos by productoVM.productos.collectAsState()
     val product   = productos.find { it.id == productId }
-    val context   = LocalContext.current
 
     var cantidad          by remember { mutableIntStateOf(1) }
     var agregado          by remember { mutableStateOf(false) }
@@ -104,43 +97,13 @@ fun ProductDetailScreen(
                 modifier         = Modifier.fillMaxWidth().height(280.dp),
                 contentAlignment = Alignment.Center
             ) {
-                val urlNormalizada = ImageUtils.getFullUrl(product.imageUrl)
-                if (urlNormalizada != null) {
-                    SubcomposeAsyncImage(
-                        model = ImageRequest.Builder(context)
-                            .data(urlNormalizada)
-                            .crossfade(true)
-                            .memoryCachePolicy(CachePolicy.ENABLED)
-                            .diskCachePolicy(CachePolicy.ENABLED)
-                            .allowHardware(false)
-                            .build(),
-                        contentDescription = product.name,
-                        contentScale       = ContentScale.Crop,
-                        modifier           = Modifier.fillMaxSize(),
-                        loading = {
-                            Box(Modifier.fillMaxSize().background(Color(0xFFE2E8F0)), contentAlignment = Alignment.Center) {
-                                CircularProgressIndicator(color = Color(0xFF2563EB), strokeWidth = 2.dp)
-                            }
-                        },
-                        error = {
-                            // Fallback si la imagen falla
-                            Box(Modifier.fillMaxSize().background(Color(0xFFE2E8F0)), contentAlignment = Alignment.Center) {
-                                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                    Text(product.category.take(2), style = MaterialTheme.typography.displayMedium, fontWeight = FontWeight.Bold, color = Color(0xFF94A3B8))
-                                    Text(product.category, style = MaterialTheme.typography.labelLarge, color = Color(0xFFCBD5E1))
-                                }
-                            }
-                        }
-                    )
-                } else {
-                    // Sin imagen — placeholder
-                    Box(Modifier.fillMaxSize().background(Color(0xFFE2E8F0)), contentAlignment = Alignment.Center) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Text(product.category.take(2), style = MaterialTheme.typography.displayMedium, fontWeight = FontWeight.Bold, color = Color(0xFF94A3B8))
-                            Text(product.category, style = MaterialTheme.typography.labelLarge, color = Color(0xFFCBD5E1))
-                        }
-                    }
-                }
+                ImagenProducto(
+                    imageUrl     = product.imageUrl,
+                    nombre       = product.name,
+                    categoria    = product.category,
+                    size         = 280.dp,
+                    cornerRadius = 0.dp
+                )
 
                 // Badges de stock encima de la imagen
                 if (product.stock == 0) {
